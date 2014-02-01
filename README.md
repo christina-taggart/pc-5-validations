@@ -1,16 +1,15 @@
-# 5 Active Record And Sinatra Propagating Validations 
+# P5 Active Record And Sinatra Propagating Validations 
  
 ##Learning Competencies 
 
 ##Summary 
 
- ## Overview
 In order to protect the integrity of your data, you will often need to prevent
 users from creating records with information that doesn't meet your constraints.
 A good practice is to inform the user why you did not save the data, and allow
 them to correct their errors.
 
-Start with this
+Start with the skeleton in the `validations` directory and 
 [skeleton](http://s3.amazonaws.com/dbc_socrates/challenges/ar-propagate-validations.zip)
 and follow the instructions below.
 
