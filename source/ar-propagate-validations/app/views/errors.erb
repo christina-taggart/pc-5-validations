@@ -1,0 +1,9 @@
+<% unless flash[:errors].nil? %>
+	<ul>
+		<% flash[:errors].each do |type, messages| %>
+			<% messages.each do |m| %>
+				<li><%= m %></li>
+			<% end %>
+		<% end %>
+	</ul>
+<% end %>

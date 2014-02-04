@@ -3,23 +3,27 @@
   <head>
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/application.css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/datepicker.css">
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="/js/application.js"></script>
 
     <title></title>
   </head>
   <body>
-
     <nav>
     <ul>
       <li><a href="/events/new">Create Event</a></li>
       <li><a href="/">All events</a></li>
     </ul>
     </nav>
-
     <div class="container">
       <%= yield %>
     </div>
   </body>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+  <script src="/js/datepicker.js"></script>
+  <script type="text/javascript">
+    $('.datepicker').datepicker({format: 'yyyy-mm-dd', startDate: 'today'});
+  </script>
 </html>

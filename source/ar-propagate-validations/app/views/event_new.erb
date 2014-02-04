@@ -1,0 +1,26 @@
+<form role="form" action="/events/create" method="post">	
+	<div class="form-group">
+		<label>Event Title</label>
+		<input type="text" name="event[title]">
+	</div>
+
+	<div class="form-group">
+		<label>Date</label>
+  	<input class="datepicker" placeholder="2014-12-12" name="event[date]">
+  </div>
+
+  <div class="form-group">
+  	<label>Organizer Name</label>
+  	<input type="text" name="event[organizer_name]">
+  </div>
+
+  <div class="form-group">
+  	<label>Organizer Email</label>
+  	<input type="text" name="event[organizer_email]">
+  </div>
+
+  <div class="form-group">
+  	<input class="btn" type="submit" value="submit">
+  </div>
+</form>
+<%= erb :errors %>
