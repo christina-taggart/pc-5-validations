@@ -13,6 +13,6 @@ class Event < ActiveRecord::Base
   validates :title, presence: true
   validates :title, uniqueness: true
   validates :organizer_name, presence: true
-  validates :email, format: { with: /.*@.*\..*/ }
+  validates :organizer_email, format: { with: /.*@.*\..*/ }
   validates :date, presence: true
 end
