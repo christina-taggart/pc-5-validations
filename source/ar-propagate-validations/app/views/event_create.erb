@@ -1,0 +1,25 @@
+<div class="conatiner">
+
+  <% if @errors %>
+    <% @errors.each do |error| %>
+      <p class="error"><%= error %></p>
+    <%end%>
+    <hr/>
+  <%end%>
+  <form is="create_event" method="post" action="/events">
+    <p>Organizer Name</p>
+    <input type="text" name="organizer_name" value="<%=@organizer_name%>">
+    <p>Organizer E-Mail</p>
+    <input type="text" name="organizer_email" value="<%=@organizer_email%>">
+    <p>Title</p>
+    <input type="text" name="title" value="<%=@title%>">
+    <p>Date</p>
+    <input type="date" name="date" value="<%=@date%>">
+    <br/><br/>
+    <input type="submit" value="Sign Up">
+
+
+
+  </form>
+
+</div>
