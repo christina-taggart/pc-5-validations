@@ -1,0 +1,15 @@
+<form action="/events" method="post">
+  <input type="text" name="organizer_name" placeholder="Your name">
+  <input type="email" name="organizer_email" placeholder="Your email" value= <%= @form_values[:organizer_email] if @form_values %>>
+  <input type="text" name="title" placeholder="Event title">
+  <input type="date" name="date" placeholder="Event date">
+  <input type="submit" value="Add event">
+</form>
+
+<% if @errors %>
+  <ul>
+  <% @errors.each do |error| %>
+    <li class = 'errors'><%= error %></li>
+  <% end %>
+</ul>
+<% end %> 
