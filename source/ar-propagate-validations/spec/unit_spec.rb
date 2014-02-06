@@ -35,6 +35,28 @@ describe "Event, an Active Record backed model" do
   end
 
   it "should validate the correct format of an email" do
-    
+    test_event = Event.new(organizer_name: "John",
+                            organizer_email: "johnexamplecom",
+                            title: "Party",
+                            date: Date.new(2014, 03, 15)
+                          )
+    test_event.save.should == false
+  end
+
+  it "should validate the presence of a date" do
+    test_event = Event.new(organizer_name: "John",
+                            organizer_email: "john@example.com",
+                            title: "Party",
+                          )
+    test_event.save.should == false
+  end
+
+  it "should validate that a date is not in the past" do
+    test_event = Event.new(organizer_name: "John",
+                            organizer_email: "john@example.com",
+                            title: "Party",
+                            date: Date.new(2001, 03, 15)
+                          )
+    test_event.save.should == false
   end
 end
