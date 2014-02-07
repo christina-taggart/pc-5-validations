@@ -1,15 +1,14 @@
 <form action="/events/create" method="post">
-  Organizer Name: <input type="text" name="organizer_name">
-  Organizer Email: <input type="email" name="organizer_email">
-  Title of Event: <input type="text" name = "title">
-  Date of Event: <input type="date" name="date">
+  Organizer Name: <input type="text" name="organizer_name" value = "<%= @params[:organizer_name] %>">
+  Organizer Email: <input type="email" name="organizer_email" value = "<%= @params[:organizer_email] %>">
+  Title of Event: <input type="text" name = "title" value = "<%= @params[:title] %>">
+  Date of Event: <input type="date" name="date" value = "<%= @params[:date] %>">
   <input type="submit" value="submit">
 </form>
 
 <% if @errors %>
-  <ul>
-    <% @errors.each do |field, error| %>
-    <li> <%= error %> </li>
-    <% end %>
-  </ul>
+  <h2>:( Your Event didn't save!  Here's why:</h2>
+  <% @errors.each do |field, error| %>
+  <p> <%= error.first %> </p>
+  <% end %>
 <% end %>
