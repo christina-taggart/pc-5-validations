@@ -73,3 +73,9 @@ form.quirks {
   margin-right: 20px;
   width: 200px;
 }
+
+#errors {
+  color: white;
+  font-weight: bold;
+  background-color: rgba(255, 0, 0, 0.5);
+}
