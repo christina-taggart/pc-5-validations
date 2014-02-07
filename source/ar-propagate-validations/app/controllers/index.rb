@@ -10,7 +10,9 @@ end
 
 get '/events/new' do
   @errors = session[:errors]
+  @params = session[:params] || {}
   session[:errors] = nil
+  session[:params] = nil
   erb :event_form
 end
 
@@ -22,6 +24,8 @@ post '/events/create' do
     redirect "/events/#{event.id}/show"
   else
     session[:errors] = event.errors
+    session[:params] = {date: params[:date], organizer_email: params[:organizer_email],
+                        organizer_name: params[:organizer_name], title: params[:title]}
     redirect '/events/new'
   end
 end
