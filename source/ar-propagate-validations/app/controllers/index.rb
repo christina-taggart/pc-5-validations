@@ -9,7 +9,7 @@ get '/events/:id/show' do |id|
 end
 
 get '/events/new' do
-  #TODO IMPLEMENT ME
+  erb :create_event
 end
 
 post '/events/create' do
