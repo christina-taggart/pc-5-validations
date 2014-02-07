@@ -6,6 +6,9 @@ gem 'pg'
 # Sinatra driver
 gem 'sinatra'
 
+# Use Chronic to parse Dates easily
+gem 'chronic'
+
 # Use Thin for our web server
 gem 'thin'
 
