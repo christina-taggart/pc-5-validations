@@ -17,7 +17,6 @@ get '/events/new' do
 end
 
 post '/events/create' do
-  p params
   event = Event.new(params)
   if event.valid?
     event.save
