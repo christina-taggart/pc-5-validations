@@ -1,0 +1,11 @@
+<form method="POST" action="/events/create">
+  <p>Title: <input type="text" name="title">
+  <p>Organizer Name: <input type="text" name="organizer_name">
+    <span class="errors"><%= @errors[:organizer_name][0] if @errors%></span></p>
+  <p>Organizer Email: <input type="text" name="organizer_email">
+    <span class="errors"><%= @errors[:organizer_email][0] if @errors%></span></p>
+  <p>Date: <input type="date" name="date">
+    <span class="errors"><%= @errors[:date_not_valid][0] if @errors%></span>
+    <span class="errors"><%= @errors[:past_date][0] if @errors%></span></p>
+  <p><input type="submit" value="Make Event">
+</form>

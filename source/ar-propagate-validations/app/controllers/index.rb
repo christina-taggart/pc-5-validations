@@ -9,9 +9,19 @@ get '/events/:id/show' do |id|
 end
 
 get '/events/new' do
-  #TODO IMPLEMENT ME
+  @errors = session[:errors]
+  session[:errors] = nil
+  erb :event_form
 end
 
 post '/events/create' do
-  #TODO IMPLEMENT ME
+  p params
+  event = Event.new(params)
+  if event.valid?
+    event.save
+    redirect "/events/#{event.id}/show"
+  else
+    session[:errors] = event.errors
+    redirect '/events/new'
+  end
 end
