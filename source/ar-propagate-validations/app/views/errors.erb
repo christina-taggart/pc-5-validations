@@ -1,0 +1,5 @@
+<ul class="errors">
+<% @errors.each do |error| %>
+	<li><%= "Your #{error[0]} #{error[1][0]}" %></li>
+<% end %>
+</ul>

@@ -9,9 +9,17 @@ get '/events/:id/show' do |id|
 end
 
 get '/events/new' do
-  #TODO IMPLEMENT ME
+  erb :create_event
 end
 
 post '/events/create' do
-  #TODO IMPLEMENT ME
+  event = Event.new(params)
+  if event.valid?
+  	event.save
+ 	"none"
+  else
+  	@errors = event.errors.messages
+  	erb :errors, :layout => false
+  end
+  
 end
