@@ -1,0 +1,7 @@
+<div id="errors">
+  <ul>
+    <% @errors.each do |error_name, error_desc| %>
+      <li><%= error_name %> - <%= error_desc %></li>
+    <% end %>
+  </ul>
+</div>
