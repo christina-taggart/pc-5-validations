@@ -13,14 +13,12 @@ get '/events/new' do
 end
 
 post '/events/create' do
-  puts "======================="
-  p params
-  puts "======================="
   event = Event.create(params)
   if event.valid?
     redirect '/'
   else
     @errors = event.errors
+    create_event_form_data
     erb :create_event
   end
 end

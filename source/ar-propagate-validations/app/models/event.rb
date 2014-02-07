@@ -11,8 +11,10 @@ class Event < ActiveRecord::Base
     message: "invalid date format: please use DD/MM/YYYY from the date picker" 
   }
   validate :date_cannot_be_in_the_past
-  
+
+  private
   def date_cannot_be_in_the_past
+    return if Chronic.parse(self.date).nil?
     today = Chronic.parse('today')
     event_date = Chronic.parse(self.date)
     unless event_date.today? || event_date > today
