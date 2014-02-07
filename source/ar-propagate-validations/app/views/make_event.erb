@@ -5,3 +5,11 @@
   Date of Event: <input type="date" name="date">
   <input type="submit" value="submit">
 </form>
+
+<% if @errors %>
+  <ul>
+    <% @errors.each do |field, error| %>
+    <li> <%= error %> </li>
+    <% end %>
+  </ul>
+<% end %>
