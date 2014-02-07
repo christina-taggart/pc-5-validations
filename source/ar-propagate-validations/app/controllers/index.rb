@@ -13,6 +13,11 @@ get '/events/new' do
 end
 
 post '/events/new' do
-  @new_event = Event.create(organizer_name: params[:name], organizer_email: params[:email], title: params[:title], date: params[:date])
-  erb :create_event
+  @new_event = Event.new(organizer_name: params[:name], organizer_email: params[:email], title: params[:title], date: params[:date])
+  if @new_event.save
+  	redirect '/'
+  else
+  	@new_event
+  	erb :create_event
+	end
 end

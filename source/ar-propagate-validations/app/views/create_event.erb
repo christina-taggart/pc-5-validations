@@ -2,13 +2,13 @@
 
 <form action="/events/new" method="POST">
 	<label class="label">Organizer's Name</label>
-		<input type="text" name="name" placeholder="Tommy Billings"><br>
+		<input type="text" name="name" placeholder="Tommy Billings" value=<%@new_event[:organizer_name] if @new_event%>><br>
 	<label class="label">Organizer's E-mail</label>
-		<input type="text" name="email" placeholder="tommy@example.com"><br>
+		<input type="text" name="email" placeholder="tommy@example.com" value=<%@new_event[:organizer_email] if @new_event%>><br>
 	<label class="label">Event Title</label>
-		<input type="text" name="title" placeholder="Catalina Wine Mixer"><br>
+		<input type="text" name="title" placeholder="Catalina Wine Mixer" value=<%@new_event[:title] if @new_event%>><br>
 	<label class="label">Event Date</label>
-		<input type="date" name="date">
+		<input type="date" name="date" value=<%@new_event[:Date] if @new_event%>>
 	<button type="submit">Submit!</button>
 	<% if @new_event %>
 		<% if @new_event.errors.any? %>
