@@ -1,0 +1,15 @@
+<form class="create_event" action="/events/new" method="post">
+  <legend>Create your Event!</legend>
+  <label for="event[organizer_name]">Your Name</label>
+  <input type="text" id="name" name="event[organizer_name]" placeholder="Enter your name"/>
+  <label for="event[title]">Event Name</label>
+  <input type="text" id="title" name="event[title]" placeholder="Name your event"/>
+  <label for="event[organizer_email]">Email</label>
+  <input type="text" id="email" name="event[organizer_email]" placeholder="Your email address"/>
+  <label for="event[date]">Date</label>
+  <input type="date" id="date" name="event[date]"/>
+  <input id="createbutton" type="submit" value="Create"/>
+</form>
+<div class="errors">
+  <%= erb :'partials/errors' %>
+</div>

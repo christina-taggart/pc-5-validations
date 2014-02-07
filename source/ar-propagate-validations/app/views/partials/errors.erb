@@ -1,0 +1,8 @@
+<ul>
+  <% if @error_list %>
+    <% @error_list.each do |error_type, message| %>
+      <% error = error_type.to_s.gsub!(/_/,' ') %>
+      <li><%="#{error.capitalize} #{message}" %></li>
+    <% end %>
+  <% end %>
+</ul>

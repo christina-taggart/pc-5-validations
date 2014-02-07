@@ -73,3 +73,17 @@ form.quirks {
   margin-right: 20px;
   width: 200px;
 }
+
+.create_event label{
+  display: block;
+}
+.create_event input{
+  display: inline-block;
+}
+
+.create_event legend{
+  font-weight: bold;
+  margin: 30px 0;
+  font-size: 1.5em;
+  text-align: center;
+}
