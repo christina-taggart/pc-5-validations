@@ -1,0 +1,12 @@
+<form name="input" action="/events/create" method="post">
+  <p>Name: <input type="text" value="<%= @params[:organizer_name] %>" name="organizer_name"><br></p>
+  <span class="errors"><%= @errors[:organizer_name][0] if @errors %></span><br>
+  <p>Email: <input type="text" value="<%= @params[:organizer_email] %>" name="organizer_email"><br>
+  <span class="errors"><%= @errors[:organizer_email][0] if @errors %></span><br></p>
+  <p>Event: <input type="text" value="<%= @params[:title] %>" name="title"><br>
+  <span class="errors"><%= @errors[:title][0] if @errors %></span><br></p>
+  <p>Date (Year-month-day): <input type="text" value="<%= @params[:date] %>" name="date"><br>
+  <span class="errors"><%= @errors[:past][0] if @errors %></span>
+  <span class="errors"><%= @errors[:invalid_date][0] if @errors %></span></p>
+  <input type="submit" value="Create">
+</form>
