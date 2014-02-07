@@ -2,12 +2,23 @@
 
 <form action="/events/new" method="POST">
 	<label class="label">Organizer's Name</label>
-	<input type="text" name="name" placeholder="Tommy Billings"><br>
+		<input type="text" name="name" placeholder="Tommy Billings"><br>
 	<label class="label">Organizer's E-mail</label>
-	<input type="text" name="email" placeholder="tommy@example.com"><br>
+		<input type="text" name="email" placeholder="tommy@example.com"><br>
 	<label class="label">Event Title</label>
-	<input type="text" name="title" placeholder="Catalina Wine Mixer"><br>
+		<input type="text" name="title" placeholder="Catalina Wine Mixer"><br>
 	<label class="label">Event Date</label>
-	<input type="date" name="date">
+		<input type="date" name="date">
 	<button type="submit">Submit!</button>
+	<% if @new_event %>
+		<% if @new_event.errors.any? %>
+	  <div class="errors">
+	    <ul>
+	    <% @new_event.errors.full_messages.each do |msg| %>
+	      <li><%= msg %></li>
+	    <% end %>
+	    </ul>
+	  </div>
+	<% end %>
+<% end %>
 </form>
