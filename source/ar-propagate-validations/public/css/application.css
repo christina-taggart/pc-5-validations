@@ -77,5 +77,6 @@ form.quirks {
 #errors {
   color: white;
   font-weight: bold;
+  font-size: 20px;
   background-color: rgba(255, 0, 0, 0.5);
 }
