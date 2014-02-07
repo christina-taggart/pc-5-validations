@@ -5,9 +5,8 @@ class Event < ActiveRecord::Base
 	validate :date_validator
 
 	def date_validator
-		if date < Date.today
+		if date.nil? || date < Date.today
 			errors.add(:date, "can't be in the past.")	
 		end
 	end
-
 end
