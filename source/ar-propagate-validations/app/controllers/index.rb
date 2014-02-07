@@ -17,8 +17,10 @@ post '/events/new' do
   if @event.save
     redirect '/'
   else
+  	p "------------------------------------"
+  	p @event.errors
+  	p "$^$^$^$^$^$^$^$^$^$^$^$^$^$^$^$^$^$^$^"
   	@errors = @event.errors.to_a
-  	p @errors
 
   	erb :create_event
   end
