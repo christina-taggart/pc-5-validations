@@ -19,7 +19,10 @@ post '/events/create' do
  if @event.save
   redirect '/'	
  else 
- 	flash[:]
- 	 erb :create_event_form
+ 	@title = params[:title]
+ 	@email = params[:organizer_email]
+ 	@name = params[:organizer_name]
+ 	@date = params[:date]
+ 	 erb :redo_event_form
  end
 end
