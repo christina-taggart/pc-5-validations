@@ -10,8 +10,16 @@ end
 
 get '/events/new' do
   #TODO IMPLEMENT ME
+  erb :create_event_form
 end
 
 post '/events/create' do
   #TODO IMPLEMENT ME
+  @event = Event.new(params)
+ if @event.save
+  redirect '/'	
+ else 
+ 	flash[:]
+ 	 erb :create_event_form
+ end
 end
