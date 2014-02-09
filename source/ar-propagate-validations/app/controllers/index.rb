@@ -1,17 +1,27 @@
+use Rack::Flash
+
 get '/' do
   @events = Event.all
-  erb :index
+  erb :'events/index'
 end
 
-get '/events/:id/show' do |id|
+get '/events/:id/show' do
   @event = Event.find(id)
-  erb :event_show
+  erb :'events/show'
 end
 
 get '/events/new' do
-  #TODO IMPLEMENT ME
+  @errors = flash[:errors] || []
+  erb :'events/new'
 end
 
-post '/events/create' do
-  #TODO IMPLEMENT ME
+post '/events' do
+  event = Event.create(params)
+  if event.valid?
+    redirect '/'
+  else
+    flash[:errors] = event.errors.full_messages
+    redirect 'events/new'
+  end
+
 end

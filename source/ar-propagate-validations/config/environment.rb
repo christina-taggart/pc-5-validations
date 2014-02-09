@@ -19,6 +19,9 @@ require 'sinatra'
 
 require 'erb'
 require 'bcrypt'
+require 'pry'
+require 'rack-flash'
+
 
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
