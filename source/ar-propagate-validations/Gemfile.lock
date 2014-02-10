@@ -15,8 +15,10 @@ GEM
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
+    chronic (0.10.2)
     daemons (1.1.9)
     diff-lcs (1.2.4)
+    dynamic_form (1.1.4)
     eventmachine (1.0.3)
     faker (1.1.2)
       i18n (~> 0.5)
@@ -55,6 +57,8 @@ DEPENDENCIES
   activerecord
   activesupport
   bcrypt-ruby
+  chronic
+  dynamic_form
   faker
   pg
   rake
