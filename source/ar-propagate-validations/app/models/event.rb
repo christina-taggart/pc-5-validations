@@ -1,13 +1,5 @@
 require 'date' 
 
-class FutureDateValidator < ActiveModel::Validator
-  def validate(record)
-    if record.date && record.date < Date.today
-      record.errors[:base] << "Date must be today or later"
-    end
-  end
-end
-
 class Event < ActiveRecord::Base
 	validates :organizer_name, presence: true
 	validates_format_of :organizer_email, 
