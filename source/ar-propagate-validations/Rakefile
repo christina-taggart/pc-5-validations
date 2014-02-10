@@ -86,7 +86,10 @@ namespace :generate do
 end
 
 namespace :db do
-  desc "Create the database at #{DB_NAME}"
+  desc "Drop, create, and migrate the database"
+  task :reset => [:drop, :create, :migrate]
+
+  desc "Create the databases at #{DB_NAME}"
   task :create do
     puts "Creating development and test databases if they don't exist..."
     system("createdb #{APP_NAME}_development && createdb #{APP_NAME}_test")
@@ -131,6 +134,6 @@ task "console" do
 end
 
 desc "Run the specs"
-RSpec::Core::RakeTask.new(:spec)
+RSpec::Core::RakeTask.new(:spec) 
 
-task :default  => :specs
+task :default  => :spec
