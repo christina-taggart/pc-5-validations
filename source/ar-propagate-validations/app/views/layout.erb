@@ -19,6 +19,14 @@
     </nav>
 
     <div class="container">
+      <% if @errors %>
+        <p>There was an error with your request:</p>
+        <ul>
+        <% @errors.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+        </ul>
+      <% end %>
       <%= yield %>
     </div>
   </body>

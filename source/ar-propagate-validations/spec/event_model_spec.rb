@@ -28,8 +28,7 @@ describe Event do
 		end
 
 		it 'will not save an event with invalid date' do
-			bad_date_str = Date.today.to_s
-			bad_date_str[5] = '5'
+			bad_date_str = Date.today.year.to_s.concat('/99/99')
 			event = Event.new(organizer_name: 'henry', organizer_email: 'henry@hens.com', 
 													title: 'the henfest', date: bad_date_str)
 			expect(event).not_to be_valid
