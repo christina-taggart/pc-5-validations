@@ -1,9 +1,9 @@
 <h2>Create Your Event!</h2>
-<form action= '/events/create' method="post">
+<form action= '/events' method="post">
   Title: <input type="text" name="title" placeholder="Event Title">
   Organizer: <input type="text" name="organizer_name" placeholder="Organizer's Name"><br>
   Email: <input type="text" name="organizer_email" placeholder="Organizer's Email">
-  Date: <input type="text" name="date" placeholder="DD/MM/YYYY">
+  Date: <input type="date" name="date">
   <input type="submit" value="Create Event">
 </form>
 <div class="errors">

@@ -1,4 +1,4 @@
-bash require 'rake'
+require 'rake'
 require 'rspec/core/rake_task'
 
 
