@@ -1,0 +1,32 @@
+Create an Event
+
+<div class="create">
+	<form action="/events/create" method="post">
+	<br>
+	<table>
+	<tr>
+		<td>Organizer Name: 
+		<td><input type="text" name="event[organizer_name]">
+	<tr>
+		<td>Organizer Email:
+		<td><input type="text" name="event[organizer_email]">
+	<tr>
+		<td>Event Title:
+		<td><input type="text" name="event[title]">
+	<tr>
+		<td>Event Date:
+		<td><input type="date" name="event[date]">
+	<tr>
+		<td>
+		<td><input type="submit" value="submit">
+	</table>
+	</form>
+</div>
+	
+<div class="errors">
+	<% if @errors %>
+		<% @errors.each do |error| %>
+			<%= error[1][0] %><br>
+		<% end %>
+	<% end %>
+</div>
