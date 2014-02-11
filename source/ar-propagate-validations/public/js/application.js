@@ -6,11 +6,9 @@ $(document).ready(function () {
 			url: '/events/create',
 			data: $(this).serialize()
 		}).done(function(errors){
-			
 			$('#errors').html("")
 			$('#errors').append(errors)
 			if (errors == "none") {
-				console.log($(location))
 				$(location).attr('href','/')
 			}
 		})
