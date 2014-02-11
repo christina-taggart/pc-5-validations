@@ -6,3 +6,10 @@
   Date: <input type="text" name="date" placeholder="DD/MM/YYYY">
   <input type="submit" value="Create Event">
 </form>
+<div class="errors">
+  <% if @errors %>
+  <% @errors.each do |error| %>
+  <li><%= error %><li>
+    <% end %>
+  <% end %>
+</div>

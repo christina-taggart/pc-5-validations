@@ -1,0 +1,13 @@
+<h2>Create Your Event!</h2>
+<form action= '/events/create' method="post">
+  Title: <input type="text" name="title" value='<%="#{params[:event_title]}"%>'>
+  Organizer: <input type="text" name="organizer_name" value='<%="#{params[:organizer_name]}"%>'><br>
+  Email: <input type="text" name="organizer_email" value='<%="#{params[:organizer_email}"%>'>
+  Date: <input type="text" name="date" value= '<%="#{params[:date]}"%>'>
+  <input type="submit" value="Create Event">
+</form>
+<div class="errors">
+  <% @errors.each do |error| %>
+  <li><%= error %><li>
+    <% end %>
+</div>
