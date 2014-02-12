@@ -7,3 +7,4 @@ require 'faker'
     :organizer_name => "Organizer #{i}",
     :organizer_email => "organizer_#{i}@example.com" })
 end
+

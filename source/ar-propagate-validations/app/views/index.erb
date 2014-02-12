@@ -1,5 +1,7 @@
+ 
+	<h1>Upcoming Events</h1>
   <ul>
     <% @events.each do |event| %>
-      <li><a href="/events/<%=event.id%>/show"><%=event.date%></a> - <%=event.title%></li>
+      <p><a href="/events/<%=event.id%>/show"><%=event.title%></a> </p>
     <% end %>
   </ul>

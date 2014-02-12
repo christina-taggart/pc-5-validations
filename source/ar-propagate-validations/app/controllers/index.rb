@@ -1,3 +1,4 @@
+
 get '/' do
   @events = Event.all
   erb :index
@@ -9,9 +10,17 @@ get '/events/:id/show' do |id|
 end
 
 get '/events/new' do
-  #TODO IMPLEMENT ME
+  erb :create_event
 end
 
-post '/events/create' do
+post '/events/new' do
   #TODO IMPLEMENT ME
+  @new_event = Event.new(params)
+  if @new_event.save
+    redirect '/'
+  else
+    @errors = @new_event.errors.to_a
+
+    erb :create_event
+  end
 end
