@@ -18,10 +18,11 @@ end
 post '/events/create' do
   #TODO IMPLEMENT ME
   event = Event.new(params[:event])
-  if event.valid?
-    redirect '/'
-  else
-    flash[:errors] = event.errors.full_messages
+  if event.nil? || !event.valid?
+    flash[:errors] = event.errors.messages
     redirect '/events/new'
+  else
+    event.save
+    redirect '/'
   end
 end

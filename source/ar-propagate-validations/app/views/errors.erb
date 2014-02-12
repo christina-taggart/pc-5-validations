@@ -1,0 +1,9 @@
+<% unless flash[:errors].nil? %>
+
+<ul class="errors">
+  <% flash[:errors].each do |name, error| %>
+    <li><%= error[0] %></li>
+  <% end %>
+</ul>
+
+<% end %>
